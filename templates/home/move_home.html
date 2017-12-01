@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>微电影管理系统</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'base/images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'admin/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/dist/css/AdminLTE.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/dist/css/skins/_all-skins.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/plugins/datepicker/datepicker3.css' %}">
+    <style>
+        *{
+            font-family:"Microsoft YaHei";
+        }
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+            vertical-align:middle;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <span class="logo-mini"><img src="{% static 'base/images/logo.png' %}"
+                                         style="height:40px;width:40px;">电影系统</span>
+            <span class="logo-lg"><img src="{% static 'base/images/logo.png' %}"
+                                       style="height:40px;width:40px;">微电影管理系统</span>
+        </a>
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">下拉菜单</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="{% static 'admin/dist/img/user2-160x160.jpg' %}"
+                                 class="user-image" alt="User Image">
+                            <span class="hidden-xs">hahahah</span>
+                            <!----    用户登录显示  --->
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="{% static 'admin/dist/img/user2-160x160.jpg' %}"
+                                     class="img-circle" alt="User Image">
+                                <p>
+                                    xxx
+                                    <small>2017-06-01</small>
+                                </p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="pwd.html" class="btn btn-default btn-flat">修改密码</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="login.html" class="btn btn-default btn-flat">退出系统</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!------ 正文内容   --->
+    <!--#轮播  -------------------------------------------------------- --->
+    <section id="hotmovie" style="margin-top:76px">
+        <div class="container">
+            <div class="row wow fadeInRight" data-wow-delay="0.6s">
+                <div class="row">
+                    <iframe class="wow fadeIn" width="100%" height="375px" frameborder=0 scrolling=no src="{% static '1-index-animation/animation.html' %}"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--# -----------------------------------------------------------------------------  ---->
+<!---电影列表--->
+<section id="movielist">
+    <div class="container">
+        <div class="row wow fadeIn" data-wow-delay="0.6s">
+            <div class="col-md-12 table-responsive">
+                <table class="table text-left table-bordered" id="movietags">
+                    <tr>
+                        <td style="width:10%;">电影标签</td>
+                        <td style="width:90%;">
+                            <a class="label label-info"><span class="glyphicon glyphicon-tag"></span>&nbsp;标签一</a>
+                            &nbsp;
+                            <a class="label label-info"><span class="glyphicon glyphicon-tag"></span>&nbsp;标签一</a>
+                            &nbsp;
+                            <a class="label label-info"><span class="glyphicon glyphicon-tag"></span>&nbsp;标签一</a>
+                            &nbsp;
+                            <a class="label label-info"><span class="glyphicon glyphicon-tag"></span>&nbsp;标签一</a>
+                            &nbsp;
+                            <a class="label label-info"><span class="glyphicon glyphicon-tag"></span>&nbsp;标签一</a>
+                    </tr>
+                    <tr>
+                        <td>电影星级</td>
+                        <td>
+                            <a class="label label-warning"><span class="glyphicon glyphicon-star"></span>&nbsp;一星</a>
+                            &nbsp;
+                            <a class="label label-warning"><span class="glyphicon glyphicon-star"></span>&nbsp;二星</a>
+                            &nbsp;
+                            <a class="label label-warning"><span class="glyphicon glyphicon-star"></span>&nbsp;三星</a>
+                            &nbsp;
+                            <a class="label label-warning"><span class="glyphicon glyphicon-star"></span>&nbsp;四星</a>
+                            &nbsp;
+                            <a class="label label-warning"><span class="glyphicon glyphicon-star"></span>&nbsp;五星</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>上映时间</td>
+                        <td>
+                            <a class="label label-default"><span class="glyphicon glyphicon-time"></span>&nbsp;最近</span></a>
+                            &nbsp;
+                            <a class="label label-default"><span class="glyphicon glyphicon-time"></span>&nbsp;2017</span></a>
+                            &nbsp;
+                            <a class="label label-default"><span class="glyphicon glyphicon-time"></span>&nbsp;2016</span></a>
+                            &nbsp;
+                            <a class="label label-default"><span class="glyphicon glyphicon-time"></span>&nbsp;2015</span></a>
+                            &nbsp;
+                            <a class="label label-default"><span class="glyphicon glyphicon-time"></span>&nbsp;更早</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>播放数量</td>
+                        <td>
+                            <a class="label label-success"><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;从高到底</span></a>
+                            &nbsp;
+                            <a class="label label-danger"><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;从低到高</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>评论数量</td>
+                        <td>
+                            <a class="label label-success"><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;从高到底</span></a>
+                            &nbsp;
+                            <a class="label label-danger"><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;从低到高</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <div class="col-md-12">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="First">
+                                <span aria-hidden="true">首页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">上一页</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1&nbsp;/&nbsp;10</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">下一页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Last">
+                                <span aria-hidden="true">尾页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--电影列表结束 -->
+
+
+
+
+    <!---- 正文 ---->
+
+
+
+</div>
+<script src="{% static 'admin/plugins/jQuery/jQuery-2.2.0.min.js' %}"></script>
+<script src="{% static 'admin/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'admin/plugins/slimScroll/jquery.slimscroll.min.js' %}"></script>
+<script src="{% static 'admin/plugins/fastclick/fastclick.js' %}"></script>
+<script src="{% static 'admin/dist/js/app.min.js' %}"></script>
+<script src="{% static 'admin/dist/js/demo.js' %}"></script>
+<script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script src="{% static 'admin/plugins/datepicker/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'admin/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js' %}" charset="UTF-8"></script>
+<script src="{% static 'js/echarts.min.js' %}"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('meminfo'));
+    option = {
+		backgroundColor: "white",
+		tooltip: {
+			formatter: "{a} <br/>{b} : {c}%"
+		},
+		toolbox: {
+			feature: {
+				restore: {},
+				saveAsImage: {}
+			}
+		},
+
+	};
+    setInterval(function () {
+        option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+        myChart.setOption(option, true);
+    },2000);
+
+</script>
+
+</body>
+</html>
