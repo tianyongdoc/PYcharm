@@ -1,8 +1,10 @@
 ####
 开发工具Pycharm
 
-python3.6 
+python3.6
+
 django1.10.1
+
 time 
 
 
